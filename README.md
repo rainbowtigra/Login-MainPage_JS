@@ -1,39 +1,3 @@
-Envoy FED Candidate Demo
-This is a demo project to gauge a candidate's HTML, CSS and JS knowledge.
-
-It uses Node and npm modules to setup local server.
-
-Fork the repository
-This repository is read only so to push your changes you'll need to fork it.
-
-In Bitbucket click the + button on the left hand navigation
-In the GET TO WORK section, choose Fork this repository
-In your forked repo click the Settings cog in the left hand navigation and choose General / User and group access Give read access to lukasz.pietraszek@envoydigital.com, melanie.berrut@envoydigital.com and zorica.janjic@envoydigital.com
-Getting Started
-The project is a Node project.
-
-Please make sure that you have it installed it on your local machine.
-
-To install all necessary npm modules run: npm install
-
-Start up the server by running npm start
-
-Now the local server should have started. Now you should have access to local server at: http://localhost:8080/ Navigate your browser to: http://localhost:8080/app to preview your project.
-
-It will watch for all the changes in src/less directory - however it won't auto-reload your browser.
-
-Tips
-Try to have a least one commit per task so that we can see the work progress
-Use descriptive commit comments
-It's up to you whether you want to push regularly or once you are finished with all of your commits
-Use Less preprocessor to style it. main.less - file is already included in src/less/ directory
-When working with Less please demonstrate you understand how to use it the most modular and effective way
-You are free to add whatever frameworks or libraries you like, but be prepared to justify your use of them.
-Things to consider: performance, efficient use of space, usability, cross-browser, responsiveness.
-Show that you understand how version control works by using following commands: branch, merge and rebase
-Once you've completed your test please create a Pull Request and add lukaszpietraszek, melanieberrutenvoy and zozon011 as reviewers.
-Tasks
-
 1. Create product listing page
 Use app/index.html file
 Create a full width page with a header, a footer and a main section in index.html.
