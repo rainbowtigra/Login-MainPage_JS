@@ -2,93 +2,82 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>PLP - product listing page</title>
-  <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PLP - product listing page</title>
+    <link rel="stylesheet" href="css/main.css">
 
-  <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Shop Homepage - Start Bootstrap Template</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="<c:url value='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'/>" rel="stylesheet" id="bootstrap-css">
+    <link href="<c:url value='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'/>" rel="stylesheet"
+          id="bootstrap-css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="./js/index.js"></script>
-  <link rel="stylesheet" href="index/sign.css">
+    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!-- Custom styles for this template -->
-  <link href="css/shop-homepage.css" rel="stylesheet">
-  <link rel="import" href="header.html"> <!--NOT WORK, why???-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/sign.css">
+    <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="index/sign.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="import" href="header.html">
 
 </head>
 
 <body>
-<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
-<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
 <div class="container">
+    <button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+    <button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
 
-  <div class="row">
-
-
-      <div class="row">
-        <div class="column" style="background-color:#aaa;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="row" style="padding: 10px;">
+        <div class="column" style="background-color:#ffffff;">
+            <img class="card-img-top" src="image/picture.jpg" width="370" height="250" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h5 class="card-title" style="color:#000080">Dolor sit qui</h5>
+                <p class="card-text">L - Large</p>
+                <div style="margin:auto;width:100%;">
+                    <div class="card-text" style="color:#00008B; width:30%;float:left"><font size="6">&pound175</font> </div>
+                    <div class="card-text" style="color:#C0C0C0; width:20%;float:left"><font size="3"><s>&pound250</s></font></div>
+                    <div class="card-text" style="color:#ff0000; width:50%;float:left"><font size="5">You save &pound75</font></div>
+                </div>
             </div>
         </div>
-        <div class="column" style="background-color:#bbb;">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
+        <div class="column" style="background-color:#ffffff;">
+            <img class="card-img-top" src="image/picture.jpg" width="370" height="250" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="color:#000080">Dolor sit qui</h5>
+                <p class="card-text">L - Large</p>
+                <div style="margin:auto;width:100%;">
+                    <div class="card-text" style="color:#00008B; width:30%;float:left"><font size="6">&pound175</font> </div>
+                    <div class="card-text" style="color:#C0C0C0; width:20%;float:left"><font size="3"><s>&pound250</s></font></div>
+                    <div class="card-text" style="color:#ff0000; width:50%;float:left"><font size="5">You save
+                        &pound75</font></div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="column" style="background-color:#ccc;">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
+        <div class="column" style="background-color:#ffffff;">
+            <img class="card-img-top" src="image/picture.jpg" width="370" height="250" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="color:#000080">Dolor sit qui</h5>
+                <p class="card-text">L - Large</p>
+                <div style="margin:auto;width:100%;">
+                    <div class="card-text" style="color:#00008B; width:30%;float:left"><font size="6">&pound175</font> </div>
+                    <div class="card-text" style="color:#C0C0C0; width:20%;float:left"><font size="3"><s>&pound250</s></font></div>
+                    <div class="card-text" style="color:#ff0000; width:50%;float:left"><font size="5">You save
+                        &pound75</font></div>
+                </div>
+            </div>
         </div>
-        <div class="column" style="background-color:#ddd;">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
-  </div>
+    </div>
 </div>
 
-<!-- Footer -->
-<footer class="py-5 bg-dark" style="position: relative; bottom: 0; width: 100%">
-  <div class="container">
-    <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
-  </div>
-  <!-- /.container -->
-</footer>
-
+<link rel="import" href="footer.html">
 
 </body>
-
 </html>

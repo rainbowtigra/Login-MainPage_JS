@@ -11,6 +11,6 @@ function listView() {
 // Grid View
 function gridView() {
   for (i = 0; i < elements.length; i++) {
-    elements[i].style.width = "30%";
+    elements[i].style.width = "33%";
   }
 }
