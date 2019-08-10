@@ -6,14 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="css/sign.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-    <link href="<c:url value='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'/>" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/sign.css">
 
 </head>
@@ -21,65 +14,29 @@
 <section id="signup">
     <div class="container">
         <div class="row main">
-            <div class="panel-heading">
-                <div class="panel-title text-center">
-                    <h1 class="title">Registration form</h1>
-                </div>
-            </div>
             <div class="main-login main-center">
-                <form class="form-horizontal" id="form">
+                <form id="form">
                     <div class="form-group">
-                        <div class="cols-sm-10">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="firstName" id="firstName"  placeholder="first name"  />
-                            </div>
-                        </div>
-                        <p class="error-input" id="firstNameError"></p>
+                        <input class="form-control" id="first-name" placeholder="First name">
+                        <div id="first-name-error" class="d-none invalid-feedback"></div>
                     </div>
-
                     <div class="form-group">
-                        <div class="cols-sm-10">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="lastName" id="lastName"  placeholder="last name"  />
-                            </div>
-                        </div>
-                        <p class="error-input" id="lastNameError"></p>
+                        <input class="form-control" id="last-name" placeholder="Last name">
+                        <div id="last-name-error" class="d-none invalid-feedback"></div>
                     </div>
-
                     <div class="form-group">
-                        <div class="cols-sm-10">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="email" id="email"  placeholder="email" />
-                            </div>
-                        </div>
-                        <p class="error-input" id="emailError"></p>
+                        <input class="form-control" id="email" placeholder="Email">
+                        <div id="email-error" class="d-none invalid-feedback"></div>
                     </div>
-
                     <div class="form-group">
-                        <div class="cols-sm-10">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" value=""  name="phone" id="phone"  placeholder="phone"  />
-                            </div>
-                        </div>
+                        <input class="form-control" id="phone" placeholder="Phone">
+                        <div id="phone-error" class="d-none invalid-feedback"></div>
                     </div>
-
                     <div class="form-group">
-                        <div class="cols-sm-10">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                <input type="password" class="form-control" name="password" id="password"  placeholder="password"/>
-                            </div>
-                        </div>
-                        <p class="error-input" id="passwordError"></p>
+                        <input class="form-control" id="password" placeholder="Password">
+                        <div id="password-error" type="password" class="d-none invalid-feedback"></div>
                     </div>
-
-                    <div class="form-group ">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block login-button">register</button>
-                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>

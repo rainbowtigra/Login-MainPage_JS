@@ -29,12 +29,20 @@ function containsSpecialCharacters(value) {
     return re.test(value);
 }
 
-function addErrors(field, errors) {
-    field.style.color = 'red';
+function displayValidationState(state) {
+    const field = state.field, errors = state.errors, error = document.getElementById(`${field.id}-error`);
+    if (errors.length == 0) {
+        error.classList.remove('d-block');
+        error.classList.add('d-none');
+    } else {
+        error.classList.remove('d-none');
+        error.classList.add('d-block');
+        error.textContent = errors[0];
+    }
 }
 
 function validateFirstName() {
-    const firstName = document.getElementById("firstName");
+    const firstName = document.getElementById("first-name");
     var state = {errors: [], field: firstName};
     if (isEmptyOrSpaces(firstName.value)) {
         state.errors.push('First name is required');
@@ -45,7 +53,7 @@ function validateFirstName() {
 }
 
 function validateLastName() {
-    const lastName = document.getElementById("lastName");
+    const lastName = document.getElementById("last-name");
     var state = {errors: [], field: lastName};
     if (isEmptyOrSpaces(lastName.value)) {
         state.errors.push('Last name is required');
@@ -100,8 +108,8 @@ form.addEventListener("submit", function (e) {
     let valid = true;
     for (const validator of fieldValidators) {
         let state = validator();
+        displayValidationState(state);
         if (state.errors.length > 0) {
-            addErrors(state.field, state.errors);
             valid = false;
         }
     }
