@@ -1,5 +1,5 @@
 var elements = document.getElementsByClassName("column");
-var i;
+let i;
 
 function listView() {
   for (i = 0; i < elements.length; i++) {
