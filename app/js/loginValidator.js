@@ -1,33 +1,9 @@
-function isAlpha(value) {
-    const re = /^[a-zA-Z]+$/;
-    return re.test(value) === true;
-}
-
-function isEmail(value) {
-    // TODO replace w/ regex as per requirements for email
-    // regex is taken from chromium
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(value).toLowerCase());
-}
-
-function isPhone(value) {
-    // TODO replace w/ regex as per requirements for phone numbers
-    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-    return re.test(value);
-}
-
-function isEmptyOrSpaces(value) {
-    return value === null || value.match(/^ *$/) !== null;
-}
-
-function isMinLength(value, min) {
-    return value.length >= min;
-}
-
-function containsSpecialCharacters(value) {
-    const re = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
-    return re.test(value);
-}
+const form = document.getElementById('register-form');
+const firstName = document.getElementById("first-name");
+const lastName = document.getElementById("last-name");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
+const password = document.getElementById("password");
 
 function displayValidationState(state) {
     const field = state.field, errors = state.errors, error = document.getElementById(`${field.id}-error`);
@@ -42,7 +18,6 @@ function displayValidationState(state) {
 }
 
 function validateFirstName() {
-    const firstName = document.getElementById("first-name");
     var state = {errors: [], field: firstName};
     if (isEmptyOrSpaces(firstName.value)) {
         state.errors.push('First name is required');
@@ -53,7 +28,6 @@ function validateFirstName() {
 }
 
 function validateLastName() {
-    const lastName = document.getElementById("last-name");
     var state = {errors: [], field: lastName};
     if (isEmptyOrSpaces(lastName.value)) {
         state.errors.push('Last name is required');
@@ -64,7 +38,6 @@ function validateLastName() {
 }
 
 function validateEmail() {
-    const email = document.getElementById("email");
     var state = {errors: [], field: email};
     if (isEmptyOrSpaces(email.value)) {
         state.errors.push('Email is required');
@@ -75,7 +48,6 @@ function validateEmail() {
 }
 
 function validatePhone() {
-    const phone = document.getElementById("phone");
     const state = {errors: [], field: phone};
     if (isEmptyOrSpaces(phone.value)) {
         state.errors.push('Phone is required');
@@ -86,7 +58,6 @@ function validatePhone() {
 }
 
 function validatePassword() {
-    const password = document.getElementById("password");
     const state = {errors: [], field: password};
     const minLength = 8;
     if (isEmptyOrSpaces(password.value)) {
@@ -102,7 +73,6 @@ function validatePassword() {
     return state;
 }
 
-const form = document.getElementById('register-form');
 form.addEventListener("submit", function (e) {
     const fieldValidators = [validateFirstName, validateLastName, validateEmail, validatePhone, validatePassword];
     let valid = true;
@@ -117,3 +87,23 @@ form.addEventListener("submit", function (e) {
         e.preventDefault();
     }
 }, false);
+
+firstName.addEventListener("blur", function () {
+   displayValidationState(validateFirstName());
+});
+
+lastName.addEventListener("blur", function () {
+    displayValidationState(validateLastName());
+});
+
+email.addEventListener("blur", function () {
+   displayValidationState(validateEmail());
+});
+
+phone.addEventListener("blur", function () {
+   displayValidationState(validatePhone());
+});
+
+password.addEventListener("blur", function () {
+   displayValidationState(validatePassword());
+});

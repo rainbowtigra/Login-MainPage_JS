@@ -8,12 +8,15 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/sign.css">
+    <link rel="stylesheet" href="css/util.css">
 </head>
 <body>
 <div class="container">
-    <div class="row align-items-center" style="min-height: 100vh">
+    <div class="row align-items-center full-height">
         <div class="col-sm">
-            <form class="form mx-auto" style="width: 400px" id="register-form">
+            <form class="form mx-auto" id="register-form" method="get" action="form.html">
+                <h1>Sign up</h1>
                 <div class="form-group">
                     <input class="form-control" id="first-name" placeholder="First name">
                     <div id="first-name-error" class="d-none invalid-feedback"></div>
@@ -39,7 +42,7 @@
         </div>
     </div>
 </div>
-<br>
+<script type="text/javascript" src="js/validationUtil.js"></script>
 <script type="text/javascript" src="js/loginValidator.js"></script>
 </body>
 </html>
