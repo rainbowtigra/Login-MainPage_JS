@@ -19,9 +19,9 @@ function displayValidationState(state) {
 
 function validateFirstName() {
     var state = {errors: [], field: firstName};
-    if (isEmptyOrSpaces(firstName.value)) {
+    if (ValidationUtil.isEmptyOrSpaces(firstName.value)) {
         state.errors.push('First name is required');
-    } else if (!isAlpha(firstName.value)) {
+    } else if (!ValidationUtil.isAlpha(firstName.value)) {
         state.errors.push('First name can only contain letters');
     }
     return state;
@@ -29,9 +29,9 @@ function validateFirstName() {
 
 function validateLastName() {
     var state = {errors: [], field: lastName};
-    if (isEmptyOrSpaces(lastName.value)) {
+    if (ValidationUtil.isEmptyOrSpaces(lastName.value)) {
         state.errors.push('Last name is required');
-    } else if (!isAlpha(lastName.value)) {
+    } else if (!ValidationUtil.isAlpha(lastName.value)) {
         state.errors.push('Last name can only contain letters');
     }
     return state;
@@ -39,9 +39,9 @@ function validateLastName() {
 
 function validateEmail() {
     var state = {errors: [], field: email};
-    if (isEmptyOrSpaces(email.value)) {
+    if (ValidationUtil.isEmptyOrSpaces(email.value)) {
         state.errors.push('Email is required');
-    } else if (!isEmail(email.value)) {
+    } else if (!ValidationUtil.isEmail(email.value)) {
         state.errors.push('Email must contain @ and a domain name');
     }
     return state;
@@ -49,9 +49,9 @@ function validateEmail() {
 
 function validatePhone() {
     const state = {errors: [], field: phone};
-    if (isEmptyOrSpaces(phone.value)) {
+    if (ValidationUtil.isEmptyOrSpaces(phone.value)) {
         state.errors.push('Phone is required');
-    } else if (!isPhone(phone.value)) {
+    } else if (!ValidationUtil.isPhone(phone.value)) {
         state.errors.push('Phone can contain + (only in front of the number) and space characters and numbers only');
     }
     return state;
@@ -60,13 +60,13 @@ function validatePhone() {
 function validatePassword() {
     const state = {errors: [], field: password};
     const minLength = 8;
-    if (isEmptyOrSpaces(password.value)) {
+    if (ValidationUtil.isEmptyOrSpaces(password.value)) {
         state.errors.push('Password is required');
     } else {
-        if (!isMinLength(password.value, minLength)) {
+        if (!ValidationUtil.isMinLength(password.value, minLength)) {
             state.errors.push(`Password must be at least ${minLength} long`);
         }
-        if (!containsSpecialCharacters(password.value)) {
+        if (!ValidationUtil.containsSpecialCharacters(password.value)) {
             state.errors.push(`Password must contain at least 1 special character`);
         }
     }
