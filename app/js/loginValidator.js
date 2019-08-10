@@ -4,6 +4,11 @@ window.onload = function() {
             e.preventDefault();
 
             //debugger;
+            firstNameValidation();
+            lastNameValidation();
+            emailValidation();
+            phoneValidation();
+            passwordValidation();
             form.submit();
         }
 
