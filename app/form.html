@@ -13,7 +13,6 @@
     <link href="<c:url value='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'/>" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="./js/loginValidator.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="css/sign.css">
 
@@ -28,7 +27,7 @@
                 </div>
             </div>
             <div class="main-login main-center">
-                <form class="form-horizontal">
+                <form class="form-horizontal" id="form">
                     <div class="form-group">
                         <div class="cols-sm-10">
                             <div class="input-group">
@@ -87,19 +86,6 @@
     </div>
 </section>
 <br>
-<script type="text/javascript">
-                var validationErrorMessages =
-                    {
-                        "phoneLengthError":`phone length error`,
-                        "passwordLengthError":"${pwLen}",
-                        "confirmPasswordError":"${comfPwCont}",
-                        "firstNameContentError":"${fnCont}",
-                        "firstNameLengthError":"${fnLen}",
-                        "lastNameContentError":"${lnCont}",
-                        "lastNameLengthError":"${lnLen}",
-                        "emailError":"${emailCont}"
-                    }
-                ;
-            </script>
+<script type="text/javascript" src="js/loginValidator.js"></script>
 </body>
 </html>
