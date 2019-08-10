@@ -1,0 +1,263 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PLP - product listing page</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>Shop Homepage - Start Bootstrap Template</title>
+
+    <link href="<c:url value='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'/>" rel="stylesheet"
+          id="bootstrap-css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="index/sign.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="import" href="header.html">
+
+</head>
+
+<body>
+&lt;!&ndash;<div class="container">
+    <button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+    <button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+
+    <div class="row" style="padding: 10px;">
+        <div class="column" style="background-color:#ffffff;">
+            <div class="img">
+                <div style="background-color: white">
+                    <i class="fa fa-heart-o" onclick="toggleHeart(this)"></i>
+                </div>
+                <img class="card-img-top" src="image/picture.jpg" width="370" height="250" alt="Card image cap">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title" style="color:#000080">Dolor sit qui</h5>
+                <p class="card-text">L - Large</p>
+                <div style="margin:auto;width:100%;">
+                    <div class="card-text" style="color:#00008B; width:30%;float:left"><font size="6">&pound175</font> </div>
+                    <div class="card-text" style="color:#C0C0C0; width:20%;float:left"><font size="3"><s>&pound250</s></font></div>
+                    <div class="card-text" style="color:#ff0000; width:50%;float:left"><font size="5">You save &pound75</font></div>
+                </div>
+            </div>
+        </div>
+        <div class="column" style="background-color:#ffffff;">
+            <div class="img">
+                <div style="background-color: white">
+                    <i class="fa fa-heart-o" onclick="toggleHeart(this)"></i>
+                </div>
+                <img class="card-img-top" src="image/picture.jpg" width="370" height="250" alt="Card image cap">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title" style="color:#000080">Dolor sit qui</h5>
+                <p class="card-text">L - Large</p>
+                <div style="margin:auto;width:100%;">
+                    <div class="card-text" style="color:#00008B; width:30%;float:left"><font size="6">&pound175</font> </div>
+                    <div class="card-text" style="color:#C0C0C0; width:20%;float:left"><font size="3"><s>&pound250</s></font></div>
+                    <div class="card-text" style="color:#ff0000; width:50%;float:left"><font size="5">You save &pound75</font></div>
+                </div>
+            </div>
+        </div>
+        <div class="column" style="background-color:#ffffff;">
+            <div class="img">
+                <div style="background-color: white">
+                    <i class="fa fa-heart-o" onclick="toggleHeart(this)"></i>
+                </div>
+                <img class="card-img-top" src="image/picture.jpg" width="370" height="250" alt="Card image cap">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title" style="color:#000080">Dolor sit qui</h5>
+                <p class="card-text">L - Large</p>
+                <div style="margin:auto;width:100%;">
+                    <div class="card-text" style="color:#00008B; width:30%;float:left"><font size="6">&pound175</font> </div>
+                    <div class="card-text" style="color:#C0C0C0; width:20%;float:left"><font size="3"><s>&pound250</s></font></div>
+                    <div class="card-text" style="color:#ff0000; width:50%;float:left"><font size="5">You save &pound75</font></div>
+                </div>
+            </div>
+        </div>
+        <div class="column" style="background-color:#ffffff;">
+            <div class="img">
+                <div style="background-color: white">
+                    <i class="fa fa-heart-o" onclick="toggleHeart(this)"></i>
+                </div>
+                <img class="card-img-top" src="image/picture.jpg" width="370" height="250" alt="Card image cap">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title" style="color:#000080">Dolor sit qui</h5>
+                <p class="card-text">L - Large</p>
+                <div style="margin:auto;width:100%;">
+                    <div class="card-text" style="color:#00008B; width:30%;float:left"><font size="6">&pound175</font> </div>
+                    <div class="card-text" style="color:#C0C0C0; width:20%;float:left"><font size="3"><s>&pound250</s></font></div>
+                    <div class="card-text" style="color:#ff0000; width:50%;float:left"><font size="5">You save
+                        &pound75</font></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="product-list">
+
+    </div>
+</div>&ndash;&gt;
+
+<link rel="import" href="/footer.html">
+<script>
+    function productTemplate(product) {
+        return `
+             <div class="column" style="background-color:#ffffff;">
+            <div class="img">
+                <div style="background-color: white">
+                    <i class="fa fa-heart-o" onclick="toggleHeart(this)"></i>
+                </div>
+                <img class="card-img-top" src="${product.picutre}" width="370" height="250" alt="Card image cap">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"  style="color:#000080">${product.name}</h5>
+                <p class="card-text">L - Large</p>
+                <div style="margin:auto;width:100%;">
+                    <div class="card-text" style="color:#00008B; width:30%;float:left"><font size="6">&pound175</font> </div>
+                    <div class="card-text" style="color:#C0C0C0; width:20%;float:left"><font size="3"><s>&pound250</s></font></div>
+                    <div class="card-text" style=" color:#ff0000; width:50%;float:left"><font size="5">You save
+                        &pound75</font></div>
+                </div>
+            </div>
+        </div>`;
+        )
+    }
+
+        for (let product of products) {
+           productHtml = poductTemplate(product);
+              document.getById('products-list').textContent += productHtml;
+        }
+</script>
+</body>
+</html>
+-->
+
+
+
+
+
+<html>
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PLP - product listing page</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>Shop Homepage - Start Bootstrap Template</title>
+
+    <link href="<c:url value='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'/>" rel="stylesheet"
+          id="bootstrap-css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="index/sign.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="import" href="header.html">
+</head>
+<body>
+<div class="container">
+    <div id="my_table" class="table">
+    </div>
+</div>
+<script>
+function getProducts() {
+    return [
+ {
+    "url": "product.html",
+    "rating": 5,
+    "name": "dolor sit qui",
+    "size": "M - Medium",
+    "picture": "http://placehold.it/370x250",
+    "savings": "$175",
+    "oldPrice": "$325",
+    "price": "$227",
+    "isFav": true,
+    "_id": "5a3964f2b3701658152a1c81"
+  },
+  {
+    "url": "product.html",
+    "rating": 3,
+    "name": "in consectetur voluptate",
+    "size": "M - Medium",
+    "picture": "http://placehold.it/370x250",
+    "price": "$332",
+    "isFav": false,
+    "_id": "5a3964f22bc8507f2f439f38"
+  },
+  {
+    "url": "product.html",
+    "rating": 4,
+    "name": "dolore reprehenderit nostrud",
+    "size": "XL - Extra large",
+    "picture": "http://placehold.it/370x250",
+    "savings": "$106",
+    "oldPrice": "$626",
+    "price": "$323",
+    "isFav": false,
+    "_id": "5a3964f2c02ac8896ad1d645"
+  }];
+}
+
+
+
+    var product = getProducts();
+    var row_data = '';
+    let i = 0;
+    for (i = 0; i < product.length; i++) {
+      var row_data = ` <div class="column" style="background-color:#ffffff;">
+            <div class="img">
+                <div style="background-color: white">
+                    <i class="fa fa-heart-o" onclick="toggleHeart(this)"></i>
+                </div>
+                <img class="card-img-top" src="${product[i].picture}" width="370" height="250" alt="Card image cap">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title" style="color:#000080">${product[i].name}</h5>
+                <p class="card-text"> ${product[i].size} </p>
+                <div style="margin:auto;width:100%;">
+                    <div class="card-text" style="color:#00008B; width:30%;float:left"><font size="6">&pound ${product[i].price}</font> </div>
+                    <div class="card-text" style="color:#C0C0C0; width:20%;float:left"><font size="3"><s>&pound ${product[i].oldPrice} </s></font></div>
+                    <div class="card-text" style=" color:#ff0000; width:50%;float:left"><font size="5">You save &pound${product[i].savings}</font></div>
+                </div>
+            </div>
+        </div>
+        `
+    var table_body_element = document.createElement('div');
+    table_body_element.innerHTML = row_data;
+    document.getElementById('my_table').appendChild(table_body_element);
+    }
+  </script>
+</body>
+</html>
