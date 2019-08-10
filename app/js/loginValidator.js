@@ -1,133 +1,111 @@
-window.onload = function() {
-        var form = document.querySelector('.form-horizontal');
-        form.onsubmit = function(e) {
-            e.preventDefault();
-
-            //debugger;
-            firstNameValidation();
-            lastNameValidation();
-            emailValidation();
-            phoneValidation();
-            passwordValidation();
-            form.submit();
-        }
-
-        function firstNameValidation () {
-            var result = true;
-            var firstNameField = document.getElementById("firstName");
-            var firstNameMinLength = 3, firstNameMaxLength = 20;
-            var REGEXP_NAME = "^[а-яА-Яa-zA-Z][А-Яа-яA-Za-z\\s]+[А-Яа-яA-Za-z]$";
-            var borderColorRed = "#F54D4D";
-
-            if (firstNameField.value.length >= firstNameMinLength && firstNameField.value.length <= firstNameMaxLength) {
-                if (firstNameField.value.search(REGEXP_NAME) == = -1) {
-                    result = false;
-                    firstNameField.borderColor = borderColorRed;
-                    firstNameError.innerText = validationErrorMessages.firstNameContentError;
-                } else {
-                    clear(firstNameError);
-                }
-            } else {
-                result = false;
-                firstNameField.borderColor = borderColorRed;
-                firstNameError.innerText = validationErrorMessages.firstNameLengthError;
-            }
-        }
-
-        function lastNameValidation () {
-            var result = true;
-            var lastNameField = document.getElementById("lastName");
-            var emailField = document.getElementById("email");
-            var lastNameError = document.getElementById("lastNameError");
-            var emailError = document.getElementById("emailError");
-            var lastNameMinLength = 3, lastNameMaxLength = 20;
-            var REGEXP_NAME = "^[а-яА-Яa-zA-Z][А-Яа-яA-Za-z\\s]+[А-Яа-яA-Za-z]$";
-
-            if (lastNameField.value.length >= lastNameMinLength && lastNameField.value.length <= lastNameMaxLength) {
-                if (lastNameField.value.search(REGEXP_NAME) == = -1) {
-                    result = false;
-                    lastNameField.borderColor = borderColorRed;
-                    lastNameError.innerText = validationErrorMessages.lastNameContentError;
-                } else {
-                    clear(lastNameError);
-                }
-            } else {
-                result = false;
-                lastNameField.borderColor = borderColorRed;
-                lastNameError.innerText = validationErrorMessages.lastNameLengthError;
-            }
-        }
-
-
-        function emailValidation () {
-            var result = true;
-            var emailField = document.getElementById("email");
-            var emailError = document.getElementById("emailError");
-            var REGEXP_EMAIL = "(?=.*[0-9])(?=.*[!@#$%^&*])[0-9a-zA-Z!@#$%^&*]{6,}";
-            var borderColorRed = "#F54D4D";
-
-            if (emailField.value.search(REGEXP_EMAIL) == = -1) {
-                result = false;
-                emailField.borderColor = borderColorRed;
-                emailError.innerText = validationErrorMessages.emailError;
-            } else {
-                clear(emailError);
-            }
-            return result;
-        }
-
-
-        function phoneValidation () {
-            var result = true;
-            var phoneField = document.getElementById("phone");
-            var phoneError = document.getElementById("phoneError");
-            var phoneLength = 12;
-            var REGEXP_phone = "^[0-9]$";
-
-            if (phoneField.value.length == phoneLength) {
-                if (phoneField.value.search(REGEXP_phone) == = -1) {
-                    result = false;
-                    phoneField.borderColor = borderColorRed;
-                    phoneError.innerText = validationErrorMessages.phoneLengthError;
-                } else {
-                    clear(phoneError);
-                }
-            } else {
-                result = false;
-                phoneField.borderColor = borderColorRed;
-                phoneError.innerText = validationErrorMessages.phoneLengthError;
-            }
-        }
-
-        function passwordValidation () {
-            var result = true;
-            var passwordField = document.getElementById("password");
-            var passwordError = document.getElementById("passwordError");
-            var passwordMinLength = 8, passwordMaxLength = 30;
-
-            if (passwordField.value.length < passwordMinLength || passwordField.value.length > passwordMaxLength) {
-                result = false;
-                passwordField.borderColor = borderColorRed;
-                passwordError.innerText = validationErrorMessages.passwordLengthError;
-            } else {
-                clear(passwordError);
-            }
-        }
-    }
-
-
-    function clear(obj) {
-        var EMPTY_STRING = "";
-        obj.innerText = EMPTY_STRING;
-    }
-
-    function isEmpty(str) {
-        if (str != null && typeof str != = "undefined"){
-            str = str.trim();
-        }
-        if (!str) {
-            return true;
-        }
-        return false;
-    }
+function isAlpha(value) {
+    const re = /^[a-zA-Z]+$/;
+    return re.test(value) === true;
 }
+
+function isEmail(value) {
+    // TODO replace w/ regex as per requirements for email
+    // regex is taken from chromium
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(value).toLowerCase());
+}
+
+function isPhone(value) {
+    // TODO replace w/ regex as per requirements for phone numbers
+    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    return re.test(value);
+}
+
+function isEmptyOrSpaces(value) {
+    return value === null || value.match(/^ *$/) !== null;
+}
+
+function isMinLength(value, min) {
+    return value.length >= min;
+}
+
+function containsSpecialCharacters(value) {
+    const re = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+    return re.test(value);
+}
+
+function addErrors(field, errors) {
+    field.style.color = 'red';
+}
+
+function validateFirstName() {
+    const firstName = document.getElementById("firstName");
+    var state = {errors: [], field: firstName};
+    if (isEmptyOrSpaces(firstName.value)) {
+        state.errors.push('First name is required');
+    } else if (!isAlpha(firstName.value)) {
+        state.errors.push('First name can only contain letters');
+    }
+    return state;
+}
+
+function validateLastName() {
+    const lastName = document.getElementById("lastName");
+    var state = {errors: [], field: lastName};
+    if (isEmptyOrSpaces(lastName.value)) {
+        state.errors.push('Last name is required');
+    } else if (!isAlpha(lastName.value)) {
+        state.errors.push('Last name can only contain letters');
+    }
+    return state;
+}
+
+function validateEmail() {
+    const email = document.getElementById("email");
+    var state = {errors: [], field: email};
+    if (isEmptyOrSpaces(email.value)) {
+        state.errors.push('Email is required');
+    } else if (!isEmail(email.value)) {
+        state.errors.push('Email must contain @ and a domain name');
+    }
+    return state;
+}
+
+function validatePhone() {
+    const phone = document.getElementById("phone");
+    const state = {errors: [], field: phone};
+    if (isEmptyOrSpaces(phone.value)) {
+        state.errors.push('Phone is required');
+    } else if (!isPhone(phone.value)) {
+        state.errors.push('Phone can contain + (only in front of the number) and space characters and numbers only');
+    }
+    return state;
+}
+
+function validatePassword() {
+    const password = document.getElementById("password");
+    const state = {errors: [], field: password};
+    const minLength = 8;
+    if (isEmptyOrSpaces(password.value)) {
+        state.errors.push('Password is required');
+    } else {
+        if (!isMinLength(password.value, minLength)) {
+            state.errors.push(`Password must be at least ${minLength} long`);
+        }
+        if (!containsSpecialCharacters(password.value)) {
+            state.errors.push(`Password must contain at least 1 special character`);
+        }
+    }
+    return state;
+}
+
+const form = document.getElementById('form');
+form.addEventListener("submit", function (e) {
+    const fieldValidators = [validateFirstName, validateLastName, validateEmail, validatePhone, validatePassword];
+    let valid = true;
+    for (const validator of fieldValidators) {
+        let state = validator();
+        if (state.errors.length > 0) {
+            addErrors(state.field, state.errors);
+            valid = false;
+        }
+    }
+    if (!valid) {
+        e.preventDefault();
+    }
+}, false);
