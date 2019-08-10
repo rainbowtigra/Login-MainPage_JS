@@ -4,7 +4,16 @@ module.exports = function(grunt) {
         server: {
           options: {
             port: 8080,
-            base: './'
+            base: './',
+            middleware: function(connect, options, middlewares) {
+              // inject a custom middleware into the array of default middlewares
+              middlewares.unshift(function(req, res, next) {
+                if (req.url !== '/data') return next();
+
+                res.end(JSON.stringify(grunt.file.readJSON('./src/data/products.json')));
+              });
+              return middlewares;
+            },
           }
         }
       },
