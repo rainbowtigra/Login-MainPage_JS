@@ -102,7 +102,7 @@ function validatePassword() {
     return state;
 }
 
-const form = document.getElementById('form');
+const form = document.getElementById('register-form');
 form.addEventListener("submit", function (e) {
     const fieldValidators = [validateFirstName, validateLastName, validateEmail, validatePhone, validatePassword];
     let valid = true;
