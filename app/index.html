@@ -40,46 +40,11 @@
 
 <script>
 function getProducts() {
-    return [
- {
-    "url": "product.html",
-    "rating": 5,
-    "name": "dolor sit qui",
-    "size": "M - Medium",
-    "picture": "http://placehold.it/370x250",
-    "savings": "$175",
-    "oldPrice": "$325",
-    "price": "$227",
-    "isFav": true,
-    "_id": "5a3964f2b3701658152a1c81"
-  },
-  {
-    "url": "product.html",
-    "rating": 3,
-    "name": "in consectetur voluptate",
-    "size": "M - Medium",
-    "picture": "http://placehold.it/370x250",
-    "price": "$332",
-    "isFav": false,
-    "_id": "5a3964f22bc8507f2f439f38"
-  },
-  {
-    "url": "product.html",
-    "rating": 4,
-    "name": "dolore reprehenderit nostrud",
-    "size": "XL - Extra large",
-    "picture": "http://placehold.it/370x250",
-    "savings": "$106",
-    "oldPrice": "$626",
-    "price": "$323",
-    "isFav": false,
-    "_id": "5a3964f2c02ac8896ad1d645"
-  }];
-}
-
-
-
-    var products = getProducts();
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            try {
+    var products = JSON.parse(xmlhttp.responseText);
     var row_data = '';
     for (let product of products) {
       var row_data = ` <div class="column" style="background-color:#ffffff;">
@@ -104,6 +69,17 @@ function getProducts() {
     table_body_element.innerHTML = row_data;
     document.getElementById('my_table').appendChild(table_body_element);
     }
+            } catch(err) {
+                console.log(err.message + " in " + xmlhttp.responseText);
+                return;
+            }
+        }
+    };
+
+    xmlhttp.open("GET", '/data', true);
+    xmlhttp.send();
+}
+getProducts();
 </script>
 
 </body>
