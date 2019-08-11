@@ -32,10 +32,10 @@ describe('Validation Util', function() {
             assert.equal(true, validationUtil.isPhone('+380501234567'));
         });
         it('should return false if string contain letters', function() {
-            assert.equal(false, validationUtil.isEmail('sndgf'));
+            assert.equal(false, validationUtil.isPhone('sndgf'));
         });
         it('should return false if string not contain full number', function() {
-            assert.equal(false, validationUtil.isEmail('+38050'));
+            assert.equal(false, validationUtil.isPhone('+38050'));
         });
     });
 });
@@ -54,10 +54,10 @@ describe('Validation Util', function() {
 describe('Validation Util', function() {
     describe('#isMinLength()', function() {
         it('should return true if string length is right', function() {
-            assert.equal(true, validationUtil.isMinLength('cc11vv22nn11!'));
+            assert.equal(true, validationUtil.isMinLength('cc11vv22nn11!', 5));
         });
         it('should return false if string length is not right', function() {
-            assert.equal(false, validationUtil.isMinLength('1234567'));
+            assert.equal(false, validationUtil.isMinLength('1234567', 8));
         });
     });
 });
@@ -67,7 +67,7 @@ describe('Validation Util', function() {
         it('should return true if password contain special characters', function() {
             assert.equal(true, validationUtil.containsSpecialCharacters('pass!pass'));
         });
-        it('should return false if password contain special characters', function() {
+        it('should return false if password does not contain special characters', function() {
             assert.equal(false, validationUtil.containsSpecialCharacters('passpass'));
         });
     });
