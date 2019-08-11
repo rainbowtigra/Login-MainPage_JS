@@ -4,14 +4,11 @@ let ValidationUtil = {
         return re.test(value) === true;
     },
     isEmail: function (value) {
-        // TODO replace w/ regex as per requirements for email
-        // regex is taken from chromium
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const re = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
         return re.test(String(value).toLowerCase());
     },
     isPhone: function (value) {
-        // TODO replace w/ regex as per requirements for phone numbers
-        const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+        const re = /(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)/;
         return re.test(value);
     },
     isEmptyOrSpaces: function (value) {
