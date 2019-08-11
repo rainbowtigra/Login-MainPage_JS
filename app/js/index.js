@@ -23,3 +23,10 @@ function toggleHeart(element) {
     }
 }
 
+function renderRating(rating) {
+    var star = '';
+    for (let i = 0; i < rating; i++) {
+        star += '<i class="fa fa-star"/>'
+    }
+     return star;
+}
