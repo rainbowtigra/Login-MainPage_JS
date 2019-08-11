@@ -32,3 +32,8 @@ function filterBySize(size, products) {
     if (size === '0') return products;
     return products.filter(product => product.size.startsWith(size));
 }
+
+function filterByPrice(price, products) {
+    if (ValidationUtil.isEmptyOrSpaces(price)) return products;
+    return products.filter(product => product.price === ('$' + price));
+}
