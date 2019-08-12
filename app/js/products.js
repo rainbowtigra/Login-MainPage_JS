@@ -1,5 +1,6 @@
 function renderProducts(products) {
-    const container = document.getElementById('my_table');
+    document.getElementById('products-size').innerHTML = `${products.length} results`;
+    const container = document.getElementById('product_table');
     container.innerHTML = '';
     for (let product of products) {
         container.insertAdjacentHTML('beforeend', renderProduct(product));

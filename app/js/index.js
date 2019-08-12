@@ -9,7 +9,7 @@ function listView() {
 
 function gridView() {
   for (i = 0; i < elements.length; i++) {
-    elements[i].style.width = "33%";
+    elements[i].style.width = "30%";
   }
 }
 
@@ -22,4 +22,3 @@ function toggleHeart(element) {
         element.classList.add('fa-heart-o');
     }
 }
-

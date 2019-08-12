@@ -1,12 +1,11 @@
-/* Create two equal columns that floats next to each other */
 .column {
   float: left;
   width: 30%;
   margin-right: 20px;
   margin-top: 20px;
+  box-shadow: 3px 3px 3px grey;
 }
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
@@ -29,4 +28,12 @@
   position: absolute;
   transform: translate(-50%, -50%);
   color:red
+}
+
+header {
+background-color: white;
+position: fixed;
+top: 0;
+z-index: 100;
+width: 100%;
 }

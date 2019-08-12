@@ -7,7 +7,7 @@
     <title>PLP - product listing page</title>
     <link rel="stylesheet" href="css/main.css">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Shop Homepage</title>
 
     <link href="<c:url value='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'/>" rel="stylesheet"
           id="bootstrap-css">
@@ -30,7 +30,10 @@
     <link rel="import" href="header.html">
 
 </head>
-<body bgcolor="#E6E6FA">
+<body style="background-color:rgb(245,245,245)">
+<header class="bg-dark">
+    <p class="text-center text-white">menu</p>
+</header>
 <div class="container">
     <div class="row">
         <div class="col">
@@ -56,11 +59,18 @@
             </form>
         </div>
     </div>
-    <div id="my_table" class="table">
+    <button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+    <button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+    <div id="products-size"></div>
+    <div id="product_table" class="table" style="overflow: hidden">
     </div>
 </div>
+<footer class="bg-dark">
+    <p class="text-center text-white">Copyright &copy; Your Website 2019</p>
+</footer>
 
 <script src="js/index.js"></script>
+<script src="js/templates/rating.js"></script>
 <script src="js/templates/product.js"></script>
 <script src="js/products.js"></script>
 <script src="js/validationUtil.js"></script>
